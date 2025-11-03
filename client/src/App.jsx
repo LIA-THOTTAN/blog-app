@@ -3,7 +3,7 @@ import Homepage from "./pages/Homepage";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 
-// ================= ADMIN COMPONENTS =================
+
 import AdminDashboard from "./pages/Admin/AdminDashboard";
 import UserManagement from "./pages/Admin/UserManagement";
 import BlogManagement from "./pages/Admin/BlogManagement";
@@ -11,15 +11,15 @@ import AdminMyBlogs from "./pages/Admin/MyBlogs";
 import AdminCreateBlog from "./pages/Admin/CreateBlog";
 import AdminProfile from "./pages/Admin/Profile";
 import AdminBlogDetails from "./pages/Admin/BlogDetails";
-import AdminEditBlog from "./pages/Admin/EditBlog";   // ✅ Admin Edit Blog
+import AdminEditBlog from "./pages/Admin/EditBlog";  
 
-// ================= USER COMPONENTS =================
+
 import UserDashboard from "./pages/User/UserDashboard";
 import UserMyBlogs from "./pages/User/MyBlogs";
 import UserCreateBlog from "./pages/User/CreateBlog";
 import UserProfile from "./pages/User/Profile";
 import UserBlogDetails from "./pages/User/BlogDetails";
-import UserEditBlog from "./pages/User/EditBlog";     // ✅ User Edit Blog
+import UserEditBlog from "./pages/User/EditBlog";    
 
 import ProtectedRoute from "./components/ProtectedRoute";
 
@@ -27,12 +27,12 @@ export default function App() {
   return (
     <Router>
       <Routes>
-        {/* ================= PUBLIC ROUTES ================= */}
+     
         <Route path="/" element={<Homepage />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
 
-        {/* ================= ADMIN ROUTES ================= */}
+        
         <Route
           path="/admin/dashboard"
           element={
@@ -93,12 +93,12 @@ export default function App() {
           path="/admin/editblog/:id"
           element={
             <ProtectedRoute allowedRoles={["admin"]}>
-              <AdminEditBlog /> {/* ✅ Admin page */}
+              <AdminEditBlog />
             </ProtectedRoute>
           }
         />
 
-        {/* ================= USER ROUTES ================= */}
+       
         <Route
           path="/user/dashboard"
           element={
@@ -143,7 +143,7 @@ export default function App() {
           path="/user/editblog/:id"
           element={
             <ProtectedRoute allowedRoles={["user"]}>
-              <UserEditBlog /> {/* ✅ User page */}
+              <UserEditBlog />
             </ProtectedRoute>
           }
         />

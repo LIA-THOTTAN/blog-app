@@ -1,4 +1,4 @@
-// client/src/pages/User/BlogDetails.jsx
+
 import { useEffect, useState } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -87,7 +87,7 @@ export default function UserBlogDetails() {
 
   return (
     <div className="flex min-h-screen bg-gradient-to-br from-gray-900 via-gray-950 to-black text-gray-100">
-      {/* Sidebar */}
+   
       <aside className="w-64 bg-gray-900 border-r border-gray-800 flex flex-col justify-between shadow-xl">
         <div>
           <h2 className="text-2xl font-bold text-center py-5 border-b border-gray-800 text-indigo-400 tracking-wide">
@@ -119,10 +119,9 @@ export default function UserBlogDetails() {
         </div>
       </aside>
 
-      {/* Main Content */}
       <main className="flex-1 p-8 overflow-y-auto">
         <div className="max-w-4xl mx-auto">
-          {/* Back Button */}
+       
           <button
             onClick={() => navigate(-1)}
             className="mb-4 text-blue-400 hover:text-blue-300 flex items-center gap-2"
@@ -130,9 +129,9 @@ export default function UserBlogDetails() {
              Back
           </button>
 
-          {/* Blog Content Card */}
+          
           <div className="bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-700">
-            {/* Blog Image */}
+        
             {blog.image && (
               <img
                 src={`http://localhost:5000${blog.image}`}
@@ -141,10 +140,10 @@ export default function UserBlogDetails() {
               />
             )}
 
-            {/* Blog Title */}
+    
             <h1 className="text-4xl font-bold text-blue-400 mb-4">{blog.title}</h1>
 
-            {/* Blog Metadata */}
+   
             <div className="flex items-center gap-4 text-gray-400 text-sm mb-6">
               <span> By {blog.author?.username || "Unknown"}</span>
               <span>•</span>
@@ -157,12 +156,12 @@ export default function UserBlogDetails() {
               </span>
             </div>
 
-            {/* Blog Content */}
+          
             <div className="text-gray-200 mb-6 whitespace-pre-line leading-relaxed text-lg">
               {blog.content}
             </div>
 
-            {/* Like and Comment Stats */}
+    
             <div className="flex items-center gap-6 mb-6 pb-6 border-b border-gray-700">
               <button
                 onClick={handleLike}
@@ -179,13 +178,13 @@ export default function UserBlogDetails() {
               </div>
             </div>
 
-            {/* Comments Section */}
+           
             <div>
               <h2 className="text-2xl font-semibold mb-4 text-indigo-400">
                 Comments
               </h2>
 
-              {/* Display Comments */}
+             
               {blog.comments && blog.comments.length > 0 ? (
                 <div className="space-y-4 mb-6">
                   {blog.comments.map((c, i) => (
@@ -193,7 +192,6 @@ export default function UserBlogDetails() {
                       key={i}
                       className="bg-gray-700 p-4 rounded-lg border border-gray-600"
                     >
-                      {/* Username above comment */}
                       <p className="text-blue-400 font-semibold mb-1">
                         {c.user?.username || "Anonymous"}
                       </p>
@@ -210,7 +208,7 @@ export default function UserBlogDetails() {
                 </p>
               )}
 
-              {/* Add Comment Form */}
+             
               <form onSubmit={handleComment} className="space-y-3">
                 <textarea
                   value={comment}

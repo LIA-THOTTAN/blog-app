@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function Homepage() {
   return (
     <div className="min-h-screen bg-gray-900 text-white flex flex-col">
-      {/* Navbar */}
+     
       <nav className="flex justify-between items-center px-8 py-4 bg-gray-800 shadow-md">
         <h1 className="text-2xl font-bold text-blue-500">BlogHub</h1>
         <ul className="flex space-x-6 items-center">
@@ -28,7 +28,7 @@ export default function Homepage() {
         </ul>
       </nav>
 
-      {/* Hero Section */}
+   
       <section className="flex flex-col items-center justify-center flex-grow text-center mt-10 px-6">
         <h2 className="text-6xl md:text-7xl font-extrabold text-blue-500 leading-tight mb-6 drop-shadow-[0_0_20px_rgba(37,99,235,0.6)]">
           <span className="block">Explore.</span>
@@ -41,7 +41,6 @@ export default function Homepage() {
           Join a community of passionate writers and readers!
         </p>
 
-        {/* Register Now Button */}
         <Link to="/register">
           <button className="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-lg font-semibold transition text-white shadow-lg shadow-blue-500/30">
             Register Now
@@ -49,7 +48,7 @@ export default function Homepage() {
         </Link>
       </section>
 
-      {/* Features Section */}
+
       <section className="mt-20 px-6 pb-20">
         <h3 className="text-3xl font-bold text-center mb-10">Key Features</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">

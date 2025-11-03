@@ -23,7 +23,7 @@ export default function MyBlogs() {
     fetchMyBlogs();
   }, []);
 
-  // ❤️ Like post
+
   const handleLike = async (id) => {
     try {
       const token = localStorage.getItem("token");
@@ -51,7 +51,7 @@ export default function MyBlogs() {
 
   return (
     <div className="flex min-h-screen bg-gray-900 text-white">
-      {/* Sidebar */}
+     
       <aside className="w-64 bg-[#0b1120] p-6 flex flex-col justify-between border-r border-gray-800">
         <div>
           <h1 className="text-2xl font-bold text-indigo-400 mb-8">BlogSpace</h1>
@@ -77,7 +77,7 @@ export default function MyBlogs() {
         </button>
       </aside>
 
-      {/* Main Content */}
+     
       <main className="flex-1 p-8 overflow-y-auto">
         <h2 className="text-2xl font-bold mb-6">My Blogs</h2>
 
@@ -88,7 +88,7 @@ export default function MyBlogs() {
             {blogs.map((blog) => (
               <div key={blog._id} className="bg-gray-800 rounded-xl shadow-lg border border-gray-700 overflow-hidden">
                 
-                {/* Blog Image */}
+                
                 {blog.image && (
                   <img
                     src={`http://localhost:5000${blog.image}`}
@@ -98,7 +98,7 @@ export default function MyBlogs() {
                 )}
 
                 <div className="p-5">
-                  {/* Title */}
+               
                   <h3
                     className="text-xl font-bold text-blue-400 hover:underline cursor-pointer"
                     onClick={() => navigate(`/admin/blog/${blog._id}`)}
@@ -110,18 +110,18 @@ export default function MyBlogs() {
                     By You on {new Date(blog.createdAt).toLocaleDateString()}
                   </p>
 
-                  {/* Description */}
+                
                   <p className="text-gray-300 mt-3">
                     {blog.content.length > 150
                       ? `${blog.content.slice(0, 150)}...`
                       : blog.content}
                   </p>
 
-                  {/* Footer Buttons */}
+               
                   <div className="flex justify-between items-center mt-4 text-gray-400">
                     <div className="flex gap-6 items-center">
                       
-                      {/* Like */}
+                      
                       <button
                         onClick={() => handleLike(blog._id)}
                         className={`flex items-center gap-1 ${
@@ -131,7 +131,7 @@ export default function MyBlogs() {
                         ❤️ {blog.likes || 0}
                       </button>
 
-                      {/* Comments */}
+                     
                       <button
                         onClick={() => navigate(`/admin/blog/${blog._id}`)}
                         className="flex items-center gap-1 hover:text-blue-400"
@@ -140,7 +140,7 @@ export default function MyBlogs() {
                       </button>
                     </div>
 
-                    {/* Edit Button */}
+                    
                     <button
                       onClick={() => navigate(`/admin/editblog/${blog._id}`)}
                       className="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-1 rounded-lg text-sm font-medium"

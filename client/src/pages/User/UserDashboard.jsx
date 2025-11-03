@@ -1,4 +1,3 @@
-// client/src/pages/User/UserDashboard.jsx
 
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -27,7 +26,7 @@ const UserDashboard = () => {
           return;
         }
 
-        // ✅ Correct public endpoint for all blogs
+        
         const response = await axios.get("http://localhost:5000/api/blogs", {
           headers: { Authorization: `Bearer ${token}` },
         });
@@ -60,7 +59,7 @@ const UserDashboard = () => {
 
   return (
     <div className="flex min-h-screen bg-gradient-to-br from-gray-900 via-gray-950 to-black text-gray-100">
-      {/* Sidebar */}
+      
       <aside className="w-64 bg-gray-900 border-r border-gray-800 flex flex-col justify-between shadow-xl">
         <div>
           <h2 className="text-2xl font-bold text-center py-5 border-b border-gray-800 text-indigo-400 tracking-wide">
@@ -104,7 +103,7 @@ const UserDashboard = () => {
         </div>
       </aside>
 
-      {/* Main Content */}
+    
       <main className="flex-1 p-8 overflow-y-auto">
         <h1 className="text-3xl font-semibold text-indigo-400 mb-2">
           Dashboard

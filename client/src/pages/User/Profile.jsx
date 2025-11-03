@@ -1,4 +1,4 @@
-// client/src/pages/User/Profile.jsx
+
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
@@ -73,7 +73,7 @@ export default function UserProfile() {
         email: res.data.user.email ?? prev.email,
       }));
 
-      // Update localStorage with new username
+      
       const storedUser = JSON.parse(localStorage.getItem("user"));
       storedUser.username = res.data.user.username;
       localStorage.setItem("user", JSON.stringify(storedUser));
@@ -102,7 +102,7 @@ export default function UserProfile() {
 
   return (
     <div className="flex min-h-screen bg-gradient-to-br from-gray-900 via-gray-950 to-black text-gray-100">
-      {/* Sidebar */}
+      
       <aside className="w-64 bg-gray-900 border-r border-gray-800 flex flex-col justify-between shadow-xl">
         <div>
           <h2 className="text-2xl font-bold text-center py-5 border-b border-gray-800 text-indigo-400 tracking-wide">
@@ -146,7 +146,7 @@ export default function UserProfile() {
         </div>
       </aside>
 
-      {/* Main Content */}
+     
       <main className="flex-1 p-8 overflow-y-auto flex items-center justify-center">
         <div className="bg-gray-800 p-8 rounded-2xl shadow-xl w-full max-w-md border border-gray-700">
           <h2 className="text-3xl font-bold text-center text-indigo-400 mb-6">

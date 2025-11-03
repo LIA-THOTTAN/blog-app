@@ -14,7 +14,7 @@ const CreateBlog = () => {
     const file = e.target.files[0];
     if (file) {
       setImage(file);
-      setPreview(URL.createObjectURL(file)); // Preview selected image
+      setPreview(URL.createObjectURL(file)); 
     }
   };
 
@@ -55,7 +55,7 @@ const CreateBlog = () => {
 
   return (
     <div className="flex min-h-screen bg-[#0f172a] text-gray-100">
-      {/* ✅ Sidebar */}
+     
       <aside className="w-64 bg-[#0b1221] p-6 flex flex-col justify-between shadow-xl">
         <div>
           <h2 className="text-2xl font-bold text-indigo-400 mb-10">
@@ -109,7 +109,6 @@ const CreateBlog = () => {
         </button>
       </aside>
 
-      {/* ✅ Main Content */}
       <main className="flex-1 flex items-center justify-center p-10 bg-[#0f172a]">
         <div className="w-full max-w-lg bg-gray-800 p-8 rounded-2xl shadow-lg">
           <h2 className="text-2xl font-bold mb-6 text-center text-blue-400">

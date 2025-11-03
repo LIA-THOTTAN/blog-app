@@ -1,4 +1,4 @@
-// client/src/pages/Login.jsx
+
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
@@ -27,14 +27,14 @@ const Login = () => {
         return;
       }
 
-      // Store token, user data, and role
+     
       localStorage.setItem("token", token);
       localStorage.setItem("user", JSON.stringify(user));
       localStorage.setItem("role", user.role);
 
       alert("Login successful!");
 
-      // Redirect based on role
+      
       if (user.role === "admin") {
         navigate("/admin/dashboard");
       } else {

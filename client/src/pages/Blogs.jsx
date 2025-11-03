@@ -9,7 +9,7 @@ export default function Blogs() {
   useEffect(() => {
     async function fetchBlogs() {
       try {
-        const res = await axios.get("http://localhost:5000/api/blogs"); // ✅ public route
+        const res = await axios.get("http://localhost:5000/api/blogs"); 
         setBlogs(res.data);
       } catch (err) {
         console.error("Error fetching blogs:", err);

@@ -1,4 +1,4 @@
-// client/src/pages/Admin/BlogManagement.jsx
+
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
@@ -31,7 +31,6 @@ export default function BlogManagement() {
         headers: { Authorization: `Bearer ${token}` },
       });
 
-      // backend might return array or { blogs: [...] }
       const data = Array.isArray(res.data) ? res.data : res.data.blogs ?? [];
       setBlogs(data);
     } catch (err) {
@@ -77,7 +76,7 @@ export default function BlogManagement() {
         { headers: { Authorization: `Bearer ${token}` } }
       );
 
-      // backend may return updated blog in res.data, or { blog: ... }
+  
       const updated = res.data && res.data._id ? res.data : res.data.blog ?? res.data;
 
       setBlogs((prev) => prev.map((b) => (b._id === id ? updated : b)));
@@ -117,7 +116,7 @@ export default function BlogManagement() {
 
   useEffect(() => {
     fetchBlogs();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    
   }, []);
 
   if (loading) {
@@ -133,7 +132,7 @@ export default function BlogManagement() {
 
   return (
     <div className="flex min-h-screen bg-gray-950 text-gray-100">
-      {/* Sidebar */}
+     
       <aside className="w-64 bg-[#0b0f19] flex flex-col justify-between border-r border-gray-800 shadow-xl">
         <div>
           <h2 className="text-2xl font-extrabold text-indigo-400 px-6 py-6">BlogSpace</h2>
@@ -154,7 +153,7 @@ export default function BlogManagement() {
         </div>
       </aside>
 
-      {/* Main Content */}
+    
       <main className="flex-1 p-8 overflow-y-auto">
         <div className="flex justify-between items-center mb-6">
           <h2 className="text-3xl font-semibold text-indigo-400">Blog Management</h2>

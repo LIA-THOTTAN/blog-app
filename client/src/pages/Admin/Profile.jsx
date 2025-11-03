@@ -82,7 +82,7 @@ export default function Profile() {
 
   return (
     <div className="flex min-h-screen bg-gray-900 text-white">
-      {/* Sidebar */}
+    
       <aside className="w-64 bg-[#0b1120] p-6 flex flex-col justify-between border-r border-gray-800">
         <div>
           <h1 className="text-2xl font-bold text-indigo-400 mb-8">BlogSpace</h1>
@@ -138,7 +138,7 @@ export default function Profile() {
         </button>
       </aside>
 
-      {/* Main Content */}
+     
       <main className="flex-1 flex justify-center items-center p-8">
         <div className="bg-[#1e293b] p-8 rounded-2xl shadow-xl w-full max-w-md">
           <h2 className="text-2xl font-bold text-center text-blue-400 mb-6">

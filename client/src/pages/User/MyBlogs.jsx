@@ -1,4 +1,4 @@
-// client/src/pages/User/MyBlogs.jsx
+
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
@@ -53,7 +53,7 @@ export default function UserMyBlogs() {
 
   return (
     <div className="flex min-h-screen bg-gradient-to-br from-gray-900 via-gray-950 to-black text-gray-100">
-      {/* Sidebar */}
+     
       <aside className="w-64 bg-gray-900 border-r border-gray-800 flex flex-col justify-between shadow-xl">
         <div>
           <h2 className="text-2xl font-bold text-center py-5 border-b border-gray-800 text-indigo-400 tracking-wide">
@@ -97,7 +97,6 @@ export default function UserMyBlogs() {
         </div>
       </aside>
 
-      {/* Main Content */}
       <main className="flex-1 p-8 overflow-y-auto">
         <h2 className="text-3xl font-semibold text-indigo-400 mb-6">My Blogs</h2>
 
@@ -120,7 +119,7 @@ export default function UserMyBlogs() {
                 key={blog._id}
                 className="bg-gray-800 border border-gray-700 rounded-xl p-5 shadow-md hover:shadow-lg transition-all"
               >
-                {/* Blog Image */}
+              
                 {blog.image && (
                   <img
                     src={`http://localhost:5000${blog.image}`}
@@ -129,7 +128,7 @@ export default function UserMyBlogs() {
                   />
                 )}
 
-                {/* Blog Title */}
+             
                 <h3
                   className="text-xl font-semibold text-blue-400 hover:underline cursor-pointer"
                   onClick={() => navigate(`/user/blog/${blog._id}`)}
@@ -142,14 +141,14 @@ export default function UserMyBlogs() {
                   {new Date(blog.createdAt).toLocaleDateString()}
                 </p>
 
-                {/* Blog Content Preview */}
+                
                 <p className="text-gray-300 mt-3">
                   {blog.content.length > 100
                     ? `${blog.content.slice(0, 100)}...`
                     : blog.content}
                 </p>
 
-                {/* Like / Comment / Edit Buttons */}
+                
                 <div className="flex justify-between items-center mt-4 text-gray-400">
                   <div className="flex gap-4">
                     <button
@@ -167,7 +166,7 @@ export default function UserMyBlogs() {
                     </button>
                   </div>
 
-                  {/* ✏️ Edit Button */}
+                
                   <button
                     onClick={() => navigate(`/user/editblog/${blog._id}`)}
                     className="bg-indigo-600 hover:bg-indigo-700 text-white px-3 py-1 rounded-lg text-sm font-medium transition-all"

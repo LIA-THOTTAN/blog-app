@@ -57,7 +57,7 @@ export default function EditBlog() {
 
   return (
     <div className="flex min-h-screen bg-gray-900 text-white">
-      {/* Sidebar */}
+    
       <aside className="w-64 bg-[#0f172a] flex flex-col justify-between py-6 px-4">
         <div>
           <h1 className="text-2xl font-bold text-indigo-400 mb-8 pl-2">
@@ -93,7 +93,7 @@ export default function EditBlog() {
         </button>
       </aside>
 
-      {/* Edit Blog Form */}
+  
       <main className="flex-1 p-8">
         <div className="max-w-3xl mx-auto bg-gray-800 p-6 rounded-lg shadow-md">
           <h2 className="text-3xl font-bold text-blue-400 mb-6">Edit Blog</h2>

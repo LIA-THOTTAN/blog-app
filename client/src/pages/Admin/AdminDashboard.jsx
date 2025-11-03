@@ -1,4 +1,4 @@
-// client/src/pages/Admin/AdminDashboard.jsx
+
 
 import React, { useEffect, useState } from "react";
 import { Users, FileText, Shield, Activity } from "lucide-react";
@@ -99,7 +99,7 @@ const AdminDashboard = () => {
   return (
     <div className="flex min-h-screen bg-gradient-to-br from-gray-900 via-gray-950 to-black text-gray-100">
       
-      {/* Sidebar */}
+      
       <aside className="w-64 bg-gray-900 border-r border-gray-800 flex flex-col justify-between shadow-xl">
         <div>
           <h2 className="text-2xl font-bold text-center py-5 border-b border-gray-800 text-indigo-400 tracking-wide">
@@ -125,14 +125,14 @@ const AdminDashboard = () => {
         </div>
       </aside>
 
-      {/* Main Content */}
+      
       <main className="flex-1 p-8 overflow-y-auto">
         <h1 className="text-3xl font-semibold text-indigo-400 mb-2">Dashboard Overview</h1>
         <p className="text-gray-400 mb-6">
           Welcome back, <span className="font-semibold text-white">{user?.username || "Admin"}</span>
         </p>
 
-        {/* Stats */}
+        
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
           {statCards.map((item, idx) => (
             <div
@@ -147,7 +147,7 @@ const AdminDashboard = () => {
           ))}
         </div>
 
-        {/* All Blogs */}
+      
         <h2 className="text-2xl font-semibold text-blue-400 mb-4">All Posted Blogs</h2>
 
         {blogs.length === 0 ? (
@@ -190,7 +190,6 @@ const AdminDashboard = () => {
                   </span>
                 </div>
 
-                {/* ✅ Like & Comment Display */}
                 <div className="flex justify-between items-center mt-3 text-gray-400 text-sm">
                   <span>❤️ {blog.likes || 0} Likes</span>
                   <span>💬 {blog.comments?.length || 0} Comments</span>

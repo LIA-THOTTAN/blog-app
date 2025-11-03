@@ -74,7 +74,7 @@ const UserManagement = () => {
 
   return (
     <div className="flex min-h-screen bg-[#0f172a] text-gray-100">
-      {/* ✅ Sidebar */}
+ 
       <aside className="w-64 bg-[#0b1221] p-6 flex flex-col justify-between shadow-xl">
         <div>
           <h2 className="text-2xl font-bold text-indigo-400 mb-10">BlogSpace</h2>
@@ -126,13 +126,13 @@ const UserManagement = () => {
         </button>
       </aside>
 
-      {/* ✅ Main Content */}
+      
       <main className="flex-1 p-8 bg-gradient-to-br from-gray-900 via-gray-950 to-black">
         <h1 className="text-3xl font-bold text-indigo-400 mb-6">
           User Management
         </h1>
 
-        {/* Active Users */}
+       
         <div className="mb-10">
           <h2 className="text-2xl text-green-400 mb-3 flex items-center gap-2">
             <UserCheck /> Active Users
@@ -186,7 +186,6 @@ const UserManagement = () => {
           </div>
         </div>
 
-        {/* Rejected Users */}
         <div>
           <h2 className="text-2xl text-red-400 mb-3 flex items-center gap-2">
             <UserX /> Rejected Users

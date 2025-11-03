@@ -1,4 +1,4 @@
-// client/src/pages/User/CreateBlog.jsx
+
 import React, { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
@@ -59,7 +59,7 @@ const UserCreateBlog = () => {
 
   return (
     <div className="flex min-h-screen bg-gradient-to-br from-gray-900 via-gray-950 to-black text-gray-100">
-      {/* Sidebar */}
+   
       <aside className="w-64 bg-gray-900 border-r border-gray-800 flex flex-col justify-between shadow-xl">
         <div>
           <h2 className="text-2xl font-bold text-center py-5 border-b border-gray-800 text-indigo-400 tracking-wide">
@@ -103,7 +103,6 @@ const UserCreateBlog = () => {
         </div>
       </aside>
 
-      {/* Main Content */}
       <main className="flex-1 p-8 overflow-y-auto flex items-center justify-center">
         <div className="w-full max-w-2xl bg-gray-800 p-8 rounded-2xl shadow-xl border border-gray-700">
           <h2 className="text-3xl font-bold mb-6 text-center text-indigo-400">
