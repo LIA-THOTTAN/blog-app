@@ -1,9 +1,7 @@
 import User from "../models/User.js";
 import Blog from "../models/blogModel.js";
 
-/* ==============================
-   📊 DASHBOARD STATS
-============================== */
+
 export const getStats = async (req, res) => {
   try {
     const totalUsers = await User.countDocuments();
@@ -17,12 +15,10 @@ export const getStats = async (req, res) => {
   }
 };
 
-/* ==============================
-   📋 GET ALL USERS
-============================== */
+
 export const getAllUsers = async (req, res) => {
   try {
-    const users = await User.find().select("-password"); // exclude password
+    const users = await User.find().select("-password"); 
     res.status(200).json(users);
   } catch (error) {
     res.status(500).json({
@@ -32,9 +28,7 @@ export const getAllUsers = async (req, res) => {
   }
 };
 
-/* ==============================
-   🚫 REJECT USER
-============================== */
+
 export const rejectUser = async (req, res) => {
   try {
     const user = await User.findById(req.params.id);
@@ -56,9 +50,7 @@ export const rejectUser = async (req, res) => {
   }
 };
 
-/* ==============================
-   ✅ UNREJECT USER
-============================== */
+
 export const unrejectUser = async (req, res) => {
   try {
     const user = await User.findById(req.params.id);

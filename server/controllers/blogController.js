@@ -1,7 +1,6 @@
-// server/controllers/blogController.js
+
 import Blog from "../models/blogModel.js";
 
-// 🧩 Get a single blog by ID
 export const getBlogById = async (req, res) => {
   try {
     const blog = await Blog.findById(req.params.id)
@@ -19,7 +18,7 @@ export const getBlogById = async (req, res) => {
   }
 };
 
-// ❤ Like a blog post
+
 export const likeBlog = async (req, res) => {
   try {
     const blog = await Blog.findById(req.params.id);
@@ -46,7 +45,7 @@ export const likeBlog = async (req, res) => {
   }
 };
 
-// 💬 Add a comment
+
 export const addComment = async (req, res) => {
   try {
     const blog = await Blog.findById(req.params.id);
@@ -69,7 +68,7 @@ export const addComment = async (req, res) => {
   }
 };
 
-// 🧡 Get all blogs
+
 export const getAllBlogs = async (req, res) => {
   try {
     const blogs = await Blog.find()
@@ -83,13 +82,13 @@ export const getAllBlogs = async (req, res) => {
   }
 };
 
-// ✏ Update blog (used by both User & Admin)
+
 export const updateBlog = async (req, res) => {
   try {
     const blog = await Blog.findById(req.params.id);
     if (!blog) return res.status(404).json({ message: "Blog not found" });
 
-    // Check if user is author or admin
+    
     if (
       blog.author.toString() !== req.user._id.toString() &&
       req.user.role !== "admin"
@@ -97,7 +96,7 @@ export const updateBlog = async (req, res) => {
       return res.status(403).json({ message: "Not authorized to edit this blog" });
     }
 
-    // Update title, content, and image
+
     blog.title = req.body.title || blog.title;
     blog.content = req.body.content || blog.content;
     if (req.file) {
@@ -111,14 +110,12 @@ export const updateBlog = async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 };
-
-// 🗑 Delete blog
 export const deleteBlog = async (req, res) => {
   try {
     const blog = await Blog.findById(req.params.id);
     if (!blog) return res.status(404).json({ message: "Blog not found" });
 
-    // only author or admin can delete
+    
     if (blog.author.toString() !== req.user._id.toString() && req.user.role !== "admin") {
       return res.status(403).json({ message: "Not authorized to delete this blog" });
     }

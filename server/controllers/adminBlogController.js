@@ -1,8 +1,7 @@
-// server/controllers/adminBlogController.js
-import Blog from "../models/blogModel.js";
-import { updateBlog } from "./blogController.js"; // reuse same logic
 
-// Get all blogs (admin)
+import Blog from "../models/blogModel.js";
+import { updateBlog } from "./blogController.js"; 
+
 export const getAllBlogsAdmin = async (req, res) => {
   try {
     const blogs = await Blog.find()
@@ -17,7 +16,7 @@ export const getAllBlogsAdmin = async (req, res) => {
   }
 };
 
-// Admin delete blog
+
 export const deleteBlog = async (req, res) => {
   try {
     const { id } = req.params;
@@ -32,7 +31,7 @@ export const deleteBlog = async (req, res) => {
   }
 };
 
-// Admin delete comment
+
 export const deleteComment = async (req, res) => {
   try {
     const { blogId, commentId } = req.params;
@@ -51,5 +50,5 @@ export const deleteComment = async (req, res) => {
   }
 };
 
-// Export updateBlog from blogController for Admin use
+
 export { updateBlog };

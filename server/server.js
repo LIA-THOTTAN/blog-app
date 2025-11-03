@@ -17,7 +17,7 @@ connectDB();
 app.use(cors());
 app.use(express.json());
 
-// ✅ Mount all routes under /api
+
 app.use("/api", authRoutes);
 app.use("/api/blogs", blogRoutes);
 app.use("/api/admin", adminRoutes);

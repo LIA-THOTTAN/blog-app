@@ -1,4 +1,4 @@
-// server/routes/adminBlogRoutes.js
+
 import express from "express";
 import { protect, adminOnly } from "../middleware/authMiddleware.js";
 import {

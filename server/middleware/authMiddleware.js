@@ -1,8 +1,7 @@
-// server/middleware/authMiddleware.js
+
 import jwt from "jsonwebtoken";
 import User from "../models/User.js";
 
-// ✅ Verify JWT and attach user info to req.user
 export const protect = async (req, res, next) => {
   let token;
 
@@ -10,10 +9,10 @@ export const protect = async (req, res, next) => {
     try {
       token = req.headers.authorization.split(" ")[1];
 
-      // Decode token
+  
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
 
-      // Fetch user and attach to request (without password)
+      
       req.user = await User.findById(decoded.id).select("-password");
 
       if (!req.user) {
@@ -30,7 +29,7 @@ export const protect = async (req, res, next) => {
   }
 };
 
-// ✅ Restrict access to Admins only
+
 export const adminOnly = (req, res, next) => {
   if (req.user && req.user.role === "admin") {
     next();
